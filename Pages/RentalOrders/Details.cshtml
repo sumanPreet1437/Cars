@@ -1,0 +1,91 @@
+﻿@page
+@model Cars.Pages.RentalOrders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>RentalOrder</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.DateProcessed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.DateProcessed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.Customer.Customerid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.Car)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.Car.CarId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.TankLevel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.TankLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.MilageStart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.MilageStart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.MilageEnd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.MilageEnd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.Days)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.Days)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.RentStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.RentStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.RentEndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.RentEndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.RateApplied)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.RateApplied)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.OrderTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.OrderTotal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalOrder.OrderStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalOrder.OrderStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RentalOrder.RentalOrderId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

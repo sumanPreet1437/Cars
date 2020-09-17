@@ -1,0 +1,44 @@
+﻿@page
+@model Cars.Pages.RentalRates.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RentalRate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RentalRate.DailyRate" class="control-label"></label>
+                <input asp-for="RentalRate.DailyRate" class="form-control" />
+                <span asp-validation-for="RentalRate.DailyRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalRate.WeeklyRate" class="control-label"></label>
+                <input asp-for="RentalRate.WeeklyRate" class="form-control" />
+                <span asp-validation-for="RentalRate.WeeklyRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalRate.MonthlyRate" class="control-label"></label>
+                <input asp-for="RentalRate.MonthlyRate" class="form-control" />
+                <span asp-validation-for="RentalRate.MonthlyRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

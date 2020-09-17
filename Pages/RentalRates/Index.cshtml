@@ -1,0 +1,49 @@
+﻿@page
+@model Cars.Pages.RentalRates.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<img src="~/images/rentpri.jpg" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalRate[0].DailyRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalRate[0].WeeklyRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalRate[0].MonthlyRate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RentalRate) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DailyRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeeklyRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthlyRate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RentalRateId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RentalRateId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RentalRateId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,87 @@
+﻿@page
+@model Cars.Pages.CarsPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<style>
+    body {
+        background-image: url('images/backgrnd.png');
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+</style>
+We have number of cars of some best makers.Choose your one and enjoy your trip or vaccations from the below;
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].TagNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].CarYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].IsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].AirConditioned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].DVDPlayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].AirBags)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Car)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirConditioned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DVDPlayer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirBags)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CarId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CarId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CarId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

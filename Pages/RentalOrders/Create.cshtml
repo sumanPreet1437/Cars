@@ -1,0 +1,87 @@
+﻿@page
+@model Cars.Pages.RentalOrders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RentalOrder</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.DateProcessed" class="control-label"></label>
+                <input asp-for="RentalOrder.DateProcessed" class="form-control" />
+                <span asp-validation-for="RentalOrder.DateProcessed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.CustomerId" class="control-label"></label>
+                <select asp-for="RentalOrder.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.CarId" class="control-label"></label>
+                <select asp-for="RentalOrder.CarId" class ="form-control" asp-items="ViewBag.CarId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.TankLevel" class="control-label"></label>
+                <input asp-for="RentalOrder.TankLevel" class="form-control" />
+                <span asp-validation-for="RentalOrder.TankLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.MilageStart" class="control-label"></label>
+                <input asp-for="RentalOrder.MilageStart" class="form-control" />
+                <span asp-validation-for="RentalOrder.MilageStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.MilageEnd" class="control-label"></label>
+                <input asp-for="RentalOrder.MilageEnd" class="form-control" />
+                <span asp-validation-for="RentalOrder.MilageEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.Days" class="control-label"></label>
+                <input asp-for="RentalOrder.Days" class="form-control" />
+                <span asp-validation-for="RentalOrder.Days" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.RentStartDate" class="control-label"></label>
+                <input asp-for="RentalOrder.RentStartDate" class="form-control" />
+                <span asp-validation-for="RentalOrder.RentStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.RentEndDate" class="control-label"></label>
+                <input asp-for="RentalOrder.RentEndDate" class="form-control" />
+                <span asp-validation-for="RentalOrder.RentEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.RateApplied" class="control-label"></label>
+                <input asp-for="RentalOrder.RateApplied" class="form-control" />
+                <span asp-validation-for="RentalOrder.RateApplied" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.OrderTotal" class="control-label"></label>
+                <input asp-for="RentalOrder.OrderTotal" class="form-control" />
+                <span asp-validation-for="RentalOrder.OrderTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalOrder.OrderStatus" class="control-label"></label>
+                <input asp-for="RentalOrder.OrderStatus" class="form-control" />
+                <span asp-validation-for="RentalOrder.OrderStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

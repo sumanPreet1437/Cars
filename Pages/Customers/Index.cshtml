@@ -1,0 +1,57 @@
+﻿@page
+@model Cars.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<style>
+    body {
+        background-image: url('images/customerback.png');
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+</style>
+<img src="~/images/customers.jpg" style="width:100%;height:20%"; />
+Customer's priority is our first priority.They are like god for us, we took guarantee to fulfil your requirements with the cheapest prize you want.
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].DrvLicNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Customer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrvLicNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Customerid">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Customerid">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Customerid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

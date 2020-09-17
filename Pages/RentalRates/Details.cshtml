@@ -1,0 +1,37 @@
+﻿@page
+@model Cars.Pages.RentalRates.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>RentalRate</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalRate.DailyRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalRate.DailyRate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalRate.WeeklyRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalRate.WeeklyRate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentalRate.MonthlyRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentalRate.MonthlyRate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RentalRate.RentalRateId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

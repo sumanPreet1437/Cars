@@ -1,0 +1,110 @@
+﻿@page
+@model Cars.Pages.RentalOrders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<style>
+    body {
+        background-image: url('images/rentbac.jpg');
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+</style>
+<img src="~/images/logo.gif" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].DateProcessed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].TankLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].MilageStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].MilageEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].Days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].RentStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].RentEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].RateApplied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].OrderTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalOrder[0].OrderStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RentalOrder) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateProcessed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Customerid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TankLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MilageStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MilageEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RateApplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RentalOrderId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RentalOrderId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RentalOrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
